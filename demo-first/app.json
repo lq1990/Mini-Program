@@ -1,14 +1,14 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/usercenter/login",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "咕咕监控",
     "navigationBarTextStyle": "black"
-    
   },
   "tabBar": {
     "list": [
@@ -17,6 +17,12 @@
         "text": "首页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home_HL.png"
+      },
+      {
+        "pagePath": "pages/usercenter/login",
+        "text": "用户",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_HL.png"
       },
       {
         "pagePath": "pages/logs/logs",

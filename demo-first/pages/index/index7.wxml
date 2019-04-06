@@ -1,0 +1,34 @@
+<!-- index.wxml -->
+<view class='container'>
+  <view class='usermotto' hidden='{{userid==1234 ? true: false}}'>
+    <text class='user-motto' id='user-{{userid}}'> {{motto}} {{userid}} </text>
+  </view>
+  
+  <block wx:if = '{{show}}'>
+    <view>
+      TRUE
+    </view>
+  </block>
+  <view wx:else>
+    ELSE
+  </view>
+
+  <view wx:for='{{array}}' wx:for-item='item' wx:key='index'>
+    <text id='messageIndex-{{index}}'> {{index}} - {{item.message}}</text>
+  </view>
+
+ 
+  <!-- 下面两个template，将以 同一个模板展示 -->
+  <template is='msgItem' data='{{...item}}'/>
+  <template is='msgItem' data='{{...itemb}}'/>
+
+  <!-- 使用下面的模板，可以保证 用msgItem的 是一个样式 -->
+  <template name='msgItem'>
+    <view>
+      <text>{{index}}: {{msg}}</text>, 
+      <text>时间: {{time}}</text>
+    </view>
+  </template>
+
+
+</view>

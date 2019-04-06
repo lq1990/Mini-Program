@@ -1,5 +1,6 @@
 //logs.js
 const util = require('../../utils/util.js')
+const app = getApp()
 
 Page({
   data: {
@@ -18,6 +19,8 @@ Page({
   },
   onShow: function() {
     console.log("logs page execute: onShow.");
+    console.log(app.globalData.userInfo);
+    console.log("-------------------------");
   },
   onHide: function () {
     // 暂时隐藏，比如用户在玩游戏，或订单。需要保存状态，比如保存游戏进度

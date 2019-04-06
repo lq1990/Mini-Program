@@ -1,0 +1,30 @@
+<import src='../common/template_item.wxml'/>
+
+<view class='container'>
+  <include src='../common/header.wxml'/>
+
+  <view id='textMsg' class='usermotto'>
+    <text data-userid='123' 
+      data-user-name='lq' bindtap='tapMsg' 
+      class='user-motto' id='user-{{userid}}'>
+    <!-- 注意区分 data-userid 中js中会当成小写处理 -->
+    <!-- 若 data-user-name 则为 userName -->
+    {{motto}}
+    </text>
+  </view>
+
+  <view id='outter' bindtap='handleTap1'>
+    outer view
+    <view id='middle' catchtap='handleTap2'>
+    <!-- 使用 catchtap 代替 bindtap 可防止事件冒泡 -->
+      middle view
+      <view id='inner' catchtap='handleTap3'>
+        inner view
+      </view>
+    </view>
+  </view>
+
+  <template is='item' data='{{text: "index page trans data"}}'/>
+
+  <include src='../common/footer.wxml' />
+</view>
